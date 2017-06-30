@@ -1222,7 +1222,7 @@ def wait_until(callable_, timeout_secs=10, interval_secs=0, stable_secs=0):
         stable_duration = t - stable_since
 
         if value and stable_duration >= stable_secs:
-            return value
+            return stable_value
 
         if t >= expiry_time:
             debug("wait_until timed out: %s" % _callable_description(callable_))
